@@ -1,3 +1,4 @@
+
 function removeDuplicates(nums: number[]): number {
     
     // Empty Array
