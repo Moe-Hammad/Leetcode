@@ -1,12 +1,10 @@
 function findMedianSortedArrays(nums1: number[], nums2: number[]): number {
-    // arr + arr2 = arr3 --> Zahlen-> mittelwert
-    let num3 = nums1.concat(nums2) 
-
-    let count = 0; 
-
-    for(let i = 0; i < num3.length; i++){
-        count += num3[i]
+    const num3 = nums1.concat(nums2);
+    num3.sort((a, b) => a - b);
+    const n = num3.length;
+    if (n % 2 === 0) {
+        return (num3[n / 2 - 1] + num3[n / 2]) / 2;
+    } else {
+        return num3[Math.floor(n / 2)];
     }
-
-    return count / num3.length
-};
+}
