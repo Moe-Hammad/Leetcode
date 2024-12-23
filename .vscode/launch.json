@@ -1,17 +1,16 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-      {
-        "type": "node",
-        "request": "launch",
-        "name": "Launch TypeScript file with Visualize Debugger",
-        "skipFiles": ["<node_internals>/**"],
-        "program": "${workspaceFolder}/src/${fileBasenameNoExtension}.ts",
-        "outFiles": ["${workspaceFolder}/dist/**/*.js"],
-        "preLaunchTask": "tsc: build - tsconfig.json",
-        "runtimeArgs": ["--inspect-brk"],
-        "console": "integratedTerminal",
-        "internalConsoleOptions": "neverOpen"
-      }
-    ]
-  }
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch TypeScript file with Visualize Debugger",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${workspaceFolder}/src/${fileBasenameNoExtension}.ts",
+      "runtimeArgs": ["-r", "ts-node/register"],
+      "outFiles": ["${workspaceFolder}/src/**/*.ts"],
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+    }
+  ]
+}
