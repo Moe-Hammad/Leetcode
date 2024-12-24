@@ -4,6 +4,10 @@
  * Output: [5,6,7,1,2,3,4]
  */
  function rotate(nums: number[], k: number): void {
+    if (nums.length <= 1 || k % nums.length === 0) {
+        // Kein Rotieren notwendig
+        return;
+    }
     k = k % nums.length; // rotationssparend
     const part1 = nums.slice(-k);
     const part2 = nums.slice(0, nums.length - k);
